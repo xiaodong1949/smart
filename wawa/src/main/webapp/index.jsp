@@ -9,28 +9,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="">
     <meta name="author" content="">
-    <link rel="shortcut icon" href="../../assets/ico/favicon.png">
-
-    <title>Carousel Template for Bootstrap</title>
-
+    <link rel="shortcut icon" href="bootstrap/ico/favicon.png">
+    <title>wawa index</title>
     <!-- Bootstrap core CSS -->
     <link href="bootstrap/css/bootstrap.css" rel="stylesheet">
-
-    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!--[if lt IE 9]>
-      <script src="../../assets/js/html5shiv.js"></script>
-      <script src="../../assets/js/respond.min.js"></script>
-    <![endif]-->
-
-    <!-- Custom styles for this template -->
-    <link href="${pageContext.request.contextPath }bootstrap/css/carousel.css" rel="stylesheet">
+    <link href="bootstrap/css/carousel.css" rel="stylesheet">
   </head>
 <!-- NAVBAR
 ================================================== -->
   <body>
     <div class="navbar-wrapper">
       <div class="container">
-
         <div class="navbar navbar-inverse navbar-static-top">
           <div class="container">
             <div class="navbar-header">
@@ -62,11 +51,8 @@
             </div>
           </div>
         </div>
-
       </div>
     </div>
-
-
     <!-- Carousel
     ================================================== -->
     <div id="myCarousel" class="carousel slide">
@@ -75,6 +61,7 @@
         <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
         <li data-target="#myCarousel" data-slide-to="1"></li>
         <li data-target="#myCarousel" data-slide-to="2"></li>
+        <li data-target="#myCarousel" data-slide-to="3"></li>
       </ol>
       <div class="carousel-inner">
         <div class="item active">
