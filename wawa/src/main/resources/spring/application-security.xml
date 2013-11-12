@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans:beans xmlns="http://www.springframework.org/schema/security"
+	xmlns:beans="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans 
+						http://www.springframework.org/schema/beans/spring-beans-3.2.xsd
+                        http://www.springframework.org/schema/security 
+                        http://www.springframework.org/schema/security/spring-security-3.1.xsd">
+
+
+	<!-- <http pattern="/login.do" security="none" />
+	<http pattern="/view/js/**" security="none" />
+	<http pattern="/view/css/**" security="none" />
+	<http pattern="/*.action" security="none" />
+
+
+	<http auto-config="true" use-expressions="true"
+		access-denied-page="/denied">
+		<form-login login-page="/login.do"
+			always-use-default-target="true" authentication-failure-url="/login.do?error=validate"
+			authentication-success-handler-ref="successHandler" />
+
+		<logout logout-success-url="/login.do" />
+
+		<!-- <session-management invalid-session-url="/login.do?error=timeout" -->
+	<!--	<session-management invalid-session-url="/view/timeout.jsp"
+			session-fixation-protection="none">
+			<concurrency-control max-sessions="10"
+				error-if-maximum-exceeded="true" expired-url="/login.do?error=repeat " />
+		</session-management>
+		<custom-filter ref="appInterceptor" before="FILTER_SECURITY_INTERCEPTOR" />
+	</http>
+
+
+	<authentication-manager alias="appAuthenticationManager">
+		<authentication-provider user-service-ref="userDetailsService">
+		</authentication-provider>
+	</authentication-manager>
+
+	<beans:bean id="appInterceptor"
+		class="com.zlfund.dm.manager.security.AppSecurityInterceptor">
+		<beans:property name="authenticationManager" ref="appAuthenticationManager" />
+		<beans:property name="accessDecisionManager" ref="appAccessDescisionManager" />
+		<beans:property name="securityMetadataSource" ref="appSecurityMetadataSource" />
+	</beans:bean>
+
+
+
+	<beans:bean id="userDetailsService"
+		class="com.zlfund.dm.manager.security.UserDetailsServiceImpl" />
+
+	<beans:bean id="appSecurityMetadataSource"
+		class="com.zlfund.dm.manager.security.AppSecurityMetadataSource">
+		<beans:constructor-arg name="managerService"
+			ref="managerService"></beans:constructor-arg>
+	</beans:bean>
+
+	<beans:bean id="appAccessDescisionManager"
+		class="com.zlfund.dm.manager.security.AppAccessDescisionManager" />
+
+	<!-- 登录成功业务处理 -->
+<!--	<beans:bean id="successHandler"
+		class="com.zlfund.dm.manager.security.LoginAuthenticationSuccessHandler">
+		<beans:property name="url" value="/main.do"></beans:property>
+	</beans:bean>
+ -->
+</beans:beans>
